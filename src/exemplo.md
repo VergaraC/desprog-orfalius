@@ -12,23 +12,33 @@ Introdução
 1. Vetores
 
 introdução sobre ordenação de vetores > exemplo com poucos dados, ordenar turma por idade
+Porém, na vida real, você vai tratar com bases de dados com milhares de elementos. 
 
 2. O que fazer?
 
-porém na vida real você vai tratar com bases de dados com milhares de elementos.
-Um dos jeitos é o algoritmo bucket sort.
+Um dos jeitos de lidar com esses casos é o algoritmo {red}(Bucket Sort). Este algoritmo tem o papel de ordenar um vetor em **3 etapas** básicas: 
+
+A **primeira etapa** consiste em separar esse vetor em vários "baldes", cada um deles comportando elementos em uma faixa de valores, por exemplo o intervalo de 1 a 20.
+
+![](etapa1.png)
+
+^^^^ imagem merda ^^^^
+
+Após separados em baldes, na **segunda etapa** é usado um **algoritmo secundário** para ordenar os valores dentro de cada balde individualmente.
+
+Na **terceira etapa**, após ordenados os elementos dentros dos baldes, pode-se apenas concatená-los para gerar o vetor ordenado.
 
 ??? Simulação
 
-Simule o começo do algoritmo para o vetor abaixo, separando em 3 buckets:
+Simule o começo do algoritmo para o vetor abaixo, separando o vetor dado em 3 buckets:
 
-Vetor = [1, 5, 7, 3, 2, 9, 4]
+Vetor = **[1, 5, 7, 3, 2, 9, 4]**
 
-Primeiro bucket: 1-3
+intervalo do primeiro bucket: **1-3**
 
-Segundo bucket:  4-6
+intervalo do segundo bucket:  **4-6**
 
-Terceiro bucket: 7-9
+intervalo do terceiro bucket: **7-9**
 
 Em particular, escreva como serão distribuidos os elementos em cada bucket:
 
@@ -76,21 +86,24 @@ Complexidade
 ---------
 
 Agora vamos Calcular a Complexidade do *Bucket Sort*.
-
 Caso esteja em dúvida de como calcular volte para a [Aula 6](https://ensino.hashi.pro.br/desprog/aula6/index.html)
 
 Vamos começar com o cálculo do Pior Caso:
-
 Em qual situação ocorre o pior caso do *bucket sort*? Qual a Complexidade?
-::: Gabarito
 
-O pior caso acontece quando todos os elementos estão no mesmo bucket, nesse caso seria a mesma coisa que aplicar o *insertion sort* no vetor inteiro.
+??? Exercício
+
+Agora vamos calcular a complexidade do Caso Médio:
+
+::: Gabarito
+ O pior caso acontece quando todos os elementos estão no mesmo bucket, nesse caso seria a mesma coisa que aplicar o *insertion sort* no vetor inteiro.
 
 Nesse Caso a O(n) = n²
 
-A explicação do cálculo da complexidade do *insertion sort* está na [Aula 7](https://ensino.hashi.pro.br/desprog/aula7/index.html)
+A explicação do cálculo está na [Aula 7](https://ensino.hashi.pro.br/desprog/aula7/index.html)
 :::
-Agora vamos calcular a complexidade do Caso Médio:
+
+???
 
 
 -------------------------------
