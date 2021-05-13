@@ -76,16 +76,19 @@ Complexidade
 ---------
 
 Agora vamos Calcular a Complexidade do *Bucket Sort*.
+
 Caso esteja em dúvida de como calcular volte para a [Aula 6](https://ensino.hashi.pro.br/desprog/aula6/index.html)
 
 Vamos começar com o cálculo do Pior Caso:
+
 Em qual situação ocorre o pior caso do *bucket sort*? Qual a Complexidade?
 ::: Gabarito
- O pior caso acontece quando todos os elementos estão no mesmo bucket, nesse caso seria a mesma coisa que aplicar o *insertion sort* no vetor inteiro.
+
+O pior caso acontece quando todos os elementos estão no mesmo bucket, nesse caso seria a mesma coisa que aplicar o *insertion sort* no vetor inteiro.
 
 Nesse Caso a O(n) = n²
 
-A explicação do cálculo está na [Aula 7](https://ensino.hashi.pro.br/desprog/aula7/index.html)
+A explicação do cálculo da complexidade do *insertion sort* está na [Aula 7](https://ensino.hashi.pro.br/desprog/aula7/index.html)
 :::
 Agora vamos calcular a complexidade do Caso Médio:
 
