@@ -11,8 +11,7 @@ Introdução
 
 1. Vetores
 
-introdução sobre ordenação de vetores > exemplo com poucos dados, ordenar turma por idade
-Porém, na vida real, você vai tratar com bases de dados com milhares de elementos. 
+Imagine que você recebeu uma lista de alunos de um colégio e é necessário ordenar essa lista por ordem de idade. Você, como um bom aluno de engenharia da computação, pensa direto nas aulas que teve com o ilustre Marcelo Hashimoto e decide usar um dos algoritmos passados por ele. Isso é válido, visto que foram dadas múltiplas maneiras de enfrentar múltiplos problemas, porém, na vida real, você pode tratar com bases de dados com centenas milhares de elementos em databases enormes, e nesses casos seria bom conhecer uma alternativa especializada para estes casos.
 
 2. O que fazer?
 
