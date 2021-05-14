@@ -72,6 +72,15 @@ O algoritmo a ser implementado para essa função é o *insertion sort*. Ele é 
 
 
 ``` c
+function bucketSort(array, k){
+    buckets ← new array of k empty lists
+    M ← the maximum key value in the array
+    for i = 1 to length(array) do
+        insert array[i] into buckets[floor(k × array[i] / M)]
+    for i = 1 to k do
+        nextSort(buckets[i])
+    return the concatenation of buckets[1], ...., buckets[k]
+}
 pseudocódigo de como é implementado o insertion sort
 ```
 
