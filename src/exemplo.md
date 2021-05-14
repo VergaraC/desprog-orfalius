@@ -21,7 +21,7 @@ A *primeira etapa* consiste em separar esse vetor em vários "baldes", cada um d
 
 ![](etapa1.png)
 
-^^^^ imagem merda ^^^^
+^^^^ imagem m**da ^^^^
 
 
 ??? Simulação
@@ -97,25 +97,67 @@ Veja a animação abaixo ilustrando o passo a passo do bucket sort:
 Complexidade
 ---------
 
-Agora vamos Calcular a Complexidade do *Bucket Sort*.
+Agora vamos Calcular a Complexidade do Bucket Sort.
 Caso esteja em dúvida de como calcular volte para a [Aula 6](https://ensino.hashi.pro.br/desprog/aula6/index.html)
 
+
+??? Pior Caso
+
 Vamos começar com o cálculo do Pior Caso:
-Em qual situação ocorre o pior caso do *bucket sort*? Qual a Complexidade?
-
-??? Exercício
-
-Agora vamos calcular a complexidade do Caso Médio:
+Em qual situação ocorre o pior caso do bucket sort? Qual a Complexidade?
 
 ::: Gabarito
- O pior caso acontece quando todos os elementos estão no mesmo bucket, nesse caso seria a mesma coisa que aplicar o *insertion sort* no vetor inteiro.
+ O pior caso acontece quando todos os elementos estão no mesmo bucket, nesse caso seria a mesma coisa que aplicar o insertion sort no vetor inteiro.
 
-Nesse Caso a O(n) = n²
+Nesse caso a complexidade é O(n²)
 
 A explicação do cálculo está na [Aula 7](https://ensino.hashi.pro.br/desprog/aula7/index.html)
 :::
 
 ???
+???Caso Médio
+Agora vamos calcular a complexidade do Caso Médio:
+
+1. Primeiro vamos calcular a complecidade da criação dos buckets e achar o valor máximo dos buckets:  
+::: Gabarito
+ Isso tem uma complexidade O(n), visto que é necessário percorrer cada item do elemento
+:::
+2. Depois vamos calcular a complexidade de separar os elementos nos buckets criados:
+
+::: Gabarito
+ Isso tem uma complexidade O(n), visto que é necessário percorrer cada item do elemento
+:::
+3. Agora vamos calcular a complexidade da aplicação do Insertion Sort em cada bucket:
+::: Gabarito
+Por buckets se tratarem de vetores pequenos é posssível afirmar que os elementos em cada bucket seguem uma distribuição binomial e sendo ni = número de itens em cada bucket, é possível afirmar que a complexidade é:
+
+
+
+![](SomaExpectation.png)
+
+
+E[ni]= n (1/n) = 1 
+
+
+Var[ni] = E[ni] q = 1 - (1/n)
+
+E[ni²] = Var[ni] + E²[ni] = 2 - (1/n)
+
+
+Assim a complexidade seria O(n)
+:::
+4. Por fim, vamos calcular a complexidade da concatenação dos buckets no vetor final:
+::: Gabarito
+Sendo k = número de buckets
+
+A complexidade da etapa é O(k)
+:::
+5. Assim a complexidade final do algoritimo no caso médio é: 
+::: Gabarito
+O(n)
+:::
+???
+-------------------------------
 
 
 -------------------------------
