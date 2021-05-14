@@ -9,23 +9,20 @@ André Rocco, Arthur Carvalho, Victor Vergara
 Introdução
 ---------
 
-1. Vetores
+* Vetores
 
-Imagine que você recebeu uma lista de alunos de um colégio e é necessário ordenar essa lista por ordem de idade. Você, como um bom aluno de engenharia da computação, pensa direto nas aulas que teve com o ilustre Marcelo Hashimoto e decide usar um dos algoritmos passados por ele. Isso é válido, visto que foram dadas múltiplas maneiras de enfrentar múltiplos problemas, porém, na vida real, você pode tratar com bases de dados com centenas milhares de elementos em databases enormes, e nesses casos seria bom conhecer uma alternativa especializada para estes casos.
+Imagine que você recebeu uma lista de alunos de um colégio e é necessário ordenar essa lista por ordem de idade. Você, como um bom aluno de engenharia da computação, pensa direto nas aulas que teve com o ilustre **{green}(Marcelo Hashimoto)** e decide usar um dos algoritmos passados por ele. Isso é válido, visto que foram dadas múltiplas maneiras de enfrentar múltiplos problemas, porém, na vida real, você pode tratar com bases de dados com centenas de milhares de elementos em databases enormes, e nesses casos seria bom conhecer uma alternativa especializada para estes casos.
 
-2. O que fazer?
+* O que fazer?
 
 Um dos jeitos de lidar com esses casos é o algoritmo {red}(Bucket Sort). Este algoritmo tem o papel de ordenar um vetor em **3 etapas** básicas: 
 
-A **primeira etapa** consiste em separar esse vetor em vários "baldes", cada um deles comportando elementos em uma faixa de valores, por exemplo o intervalo de 1 a 20.
+A *primeira etapa* consiste em separar esse vetor em vários "baldes", cada um deles comportando elementos em uma faixa de valores, por exemplo o intervalo de 1 a 20.
 
 ![](etapa1.png)
 
 ^^^^ imagem merda ^^^^
 
-Após separados em baldes, na **segunda etapa** é usado um **algoritmo secundário** para ordenar os valores dentro de cada balde individualmente.
-
-Na **terceira etapa**, após ordenados os elementos dentros dos baldes, pode-se apenas concatená-los para gerar o vetor ordenado.
 
 ??? Simulação
 
@@ -55,13 +52,24 @@ Bucket 3: 7, 9
 
 ???
 
-Note que os valores estão separados nos buckets apropriados, porém não estão ordenados internamente.
+Note que os valores estão separados nos buckets apropriados, porém não estão ordenados internamente. Então, entrando na *segunda etapa* de implementação, resta a pergunta: **Como ordenar os valores internamente?**
 
-3. Algoritimo secundário
+* Algoritmo secundário
 
-Após isso, será necessário rodar outro algoritmo de ordenação, dessa vez dentro de cada "balde". 
+Como você deve ter imaginado, será necessário rodar outro algoritmo de ordenação, dessa vez dentro de cada "balde". Os algoritmos geralmente utilizados para fazer essa função são os que vocês estudaram na [Aula 7](https://ensino.hashi.pro.br/desprog/aula7/index.html).
 
-O algoritmo a ser implementado para essa função é o **insertion sort**. Ele é um ótimo algoritimo para este caso pois se sobressai quando o número de elementos é {red}(pequeno) e o vetor não tem {red}(ordem aparente).
+??? Pergunta
+
+Entre os algoritmos disponibilizados existe um que se sobressai para essa tarefa. Você consegue identificar qual é esse algoritmo?
+
+::: Gabarito
+
+O algoritmo a ser implementado para essa função é o *insertion sort*. Ele é um ótimo algoritimo para este caso pois se sobressai quando o número de elementos é {red}(pequeno) e o vetor não tem {red}(ordem aparente).
+
+:::
+
+???
+
 
 ``` c
 pseudocódigo de como é implementado o insertion sort
@@ -77,8 +85,13 @@ Bucket 2: 4 5
 Bucket 3: 7 9
 ```
 
+* Concatenação
 
+Por fim, na *terceira etapa* da implementação, resta concatenar os baldes com os valores ordenados entre si, dessa vez em um novo vetor, deixando o caráter desse algoritmo como **estável**.
 
+Veja a animação abaixo ilustrando o passo a passo do bucket sort:
+
+;bucket
 
 ----------------------------
 Complexidade
