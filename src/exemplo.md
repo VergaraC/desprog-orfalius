@@ -15,13 +15,11 @@ Imagine que você recebeu uma lista de alunos de um colégio e é necessário or
 
 * O que fazer?
 
-Um dos jeitos de lidar com esses casos é o algoritmo {red}(Bucket Sort). Este algoritmo tem o papel de ordenar um vetor em **3 etapas** básicas: 
+Um dos jeitos de lidar com esses casos é o algoritmo {red}(Bucket Sort). Este algoritmo pretende ordenar vetores quebrando-os em vetores menores e ordenando cada vetor menor individualmente. Para isso ser feito, é preciso percorrer **3 etapas** básicas de implementação: 
 
 A *primeira etapa* consiste em separar esse vetor em vários "baldes", cada um deles comportando elementos em uma faixa de valores, por exemplo o intervalo de 1 a 20.
 
-![](etapa1.png)
-
-^^^^ imagem m**da ^^^^
+![](imagemexemplo.png)
 
 
 ??? Simulação
@@ -71,18 +69,6 @@ O algoritmo a ser implementado para essa função é o *insertion sort*. Ele é 
 ???
 
 
-``` c
-function bucketSort(array, k){
-    buckets ← new array of k empty lists
-    M ← the maximum key value in the array
-    for i = 1 to length(array) do
-        insert array[i] into buckets[floor(k × array[i] / M)]
-    for i = 1 to k do
-        nextSort(buckets[i])
-    return the concatenation of buckets[1], ...., buckets[k]
-}
-pseudocódigo de como é implementado o insertion sort
-```
 
 Após isso, cada bucket ficará ordenado, ou seja, com essa aparência:
 
@@ -101,6 +87,20 @@ Por fim, na *terceira etapa* da implementação, resta concatenar os baldes com 
 Veja a animação abaixo ilustrando o passo a passo do bucket sort:
 
 ;Exemplo
+
+Visto isso, o pseudocódigo abaixo ilustra a implementação do bucket sort. Veja se você entendeu:
+
+``` c
+function bucketSort(array, k){
+    buckets ← new array of k empty lists
+    M ← the maximum key value in the array
+    for i = 1 to length(array) do
+        insert array[i] into buckets[floor(k × array[i] / M)]
+    for i = 1 to k do
+        insertionSort(buckets[i])
+    return the concatenation of buckets[1], ...., buckets[k]
+}
+```
 
 ----------------------------
 Complexidade
@@ -168,77 +168,3 @@ O(n)
 ???
 -------------------------------
 
-
--------------------------------
-Para criar um parágrafo, basta escrever um texto contínuo, sem pular linhas.
-
-Você também pode criar
-
-1. listas;
-
-2. ordenadas,
-
-assim como
-
-* listas;
-
-* não-ordenadas
-
-e imagens. Lembre que todas as imagens devem estar em uma subpasta *img*.
-
-![](logo.png)
-
-Para tabelas, usa-se a [notação do
-MultiMarkdown](https://fletcher.github.io/MultiMarkdown-6/syntax/tables.html),
-que é muito flexível. Vale a pena abrir esse link para saber todas as
-possibilidades.
-
-| coluna a | coluna b |
-|----------|----------|
-| 1        | 2        |
-
-Ao longo de um texto, você pode usar *itálico*, **negrito**, {red}(vermelho) e
-[[tecla]]. Também pode usar uma equação LaTeX: $f(n) \leq g(n)$. Se for muito
-grande, você pode isolá-la em um parágrafo.
-
-$$\lim_{n \rightarrow \infty} \frac{f(n)}{g(n)} \leq 1$$
-
-Para inserir uma animação, use `md ;` seguido do nome de uma pasta onde as
-imagens estão. Essa pasta também deve estar em *img*.
-
-;bubble
-
-Você também pode inserir código, inclusive especificando a linguagem.
-
-``` py
-def f():
-    print('hello world')
-```
-
-``` c
-void f() {
-    printf("hello world\n");
-}
-```
-
-Se não especificar nenhuma, o código fica com colorização de terminal.
-
-```
-hello world
-```
-
-
-!!! Aviso
-Este é um exemplo de aviso, entre `md !!!`.
-!!!
-
-
-??? Exercício
-
-Este é um exemplo de exercício, entre `md ???`.
-
-::: Gabarito
-Este é um exemplo de gabarito, entre `md :::`.
-:::
-
-???
