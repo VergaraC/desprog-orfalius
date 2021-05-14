@@ -91,7 +91,7 @@ Por fim, na *terceira etapa* da implementação, resta concatenar os baldes com 
 
 Veja a animação abaixo ilustrando o passo a passo do bucket sort:
 
-;bucket
+;Exemplo
 
 ----------------------------
 Complexidade
