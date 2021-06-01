@@ -192,7 +192,23 @@ O(n)
 ???
 ??? Melhorar Caso 
 
-Qual a melhor complexidade possível no *Bucket Sort*?
+Qual a melhor complexidade para vetores muito grandes possível no *Bucket Sort*?
+::: Explicação do cálculo
+Levando em consideração a equação de complexidade do algoritimo:
+
+![](AVG.png)
+
+Para a melhor complexidade possível é necessário que os buckets tenham o mesmo número de elementos e manter uma propornalidade entre k e n, sendo k o número de buckets e n o número de elementos no vetor.
+
+Por exemplo:
+
+Caso k = n/8 
+
+A complexidade do algoritimo seria O(3n), ou seja de primeira ordem.
+
+É importante ressaltar que caso n = k, caímos no pior caso, visto que seria a mesma coisa que aplicar o insertion sort, O(n²)
+
+:::
 ???
 -------------------------------
 
