@@ -166,5 +166,9 @@ A complexidade da etapa é O(k)
 O(n)
 :::
 ???
+??? Melhorar Caso 
+
+Qual a melhor complexidade possível no *Bucket Sort*?
+???
 -------------------------------
 
