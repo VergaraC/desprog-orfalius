@@ -48,6 +48,17 @@ Bucket 3: 7, 9
 
 :::
 
+Veja o pseudocódigo abaixo. Você está de acordo com o que está lendo?
+
+``` c
+function bucketSort(array, k){
+    buckets ← novo array de k listas vazias
+    M ← valor máximo do array
+    for i = 1 to length(array) do
+        insere array[i] nos buckets[floor(k × array[i] / M)]
+}
+```
+
 ???
 
 Note que os valores estão separados nos buckets apropriados, porém não estão ordenados internamente. Então, entrando na *segunda etapa* de implementação, resta a pergunta: **Como ordenar os valores internamente?**
@@ -80,6 +91,19 @@ Bucket 2: 4 5
 Bucket 3: 7 9
 ```
 
+O pseudocódigo abaixo mostra como ficará o programa após o insertion sort.
+
+``` c
+function bucketSort(array, k){
+    buckets ← novo array de k listas vazias
+    M ← valor máximo do array
+    for i = 1 to length(array) do
+        insere array[i] nos buckets[floor(k × array[i] / M)]
+    for i = 1 to k do
+        insertionSort(buckets[i])
+}
+```
+
 * Concatenação
 
 Por fim, na *terceira etapa* da implementação, resta concatenar os baldes com os valores ordenados entre si, dessa vez em um novo vetor, deixando o caráter desse algoritmo como **estável**.
@@ -92,13 +116,13 @@ Visto isso, o pseudocódigo abaixo ilustra a implementação do bucket sort. Vej
 
 ``` c
 function bucketSort(array, k){
-    buckets ← new array of k empty lists
-    M ← the maximum key value in the array
+    buckets ← novo array de k listas vazias
+    M ← valor máximo do array
     for i = 1 to length(array) do
-        insert array[i] into buckets[floor(k × array[i] / M)]
+        insere array[i] nos buckets[floor(k × array[i] / M)]
     for i = 1 to k do
         insertionSort(buckets[i])
-    return the concatenation of buckets[1], ...., buckets[k]
+    return concatenação dos buckets[1], ...., buckets[k]
 }
 ```
 
