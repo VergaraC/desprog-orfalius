@@ -11,11 +11,11 @@ Introdução
 
 * Vetores
 
-Imagine que você recebeu uma lista de alunos de um colégio e é necessário ordenar essa lista por ordem de idade. Você, como um bom aluno de engenharia da computação, pensa direto nas aulas que teve com o ilustre **{green}(Marcelo Hashimoto)** e decide usar um dos algoritmos passados por ele. Isso é válido, visto que foram dadas múltiplas maneiras de enfrentar múltiplos problemas, porém, na vida real, você pode tratar com bases de dados com centenas de milhares de elementos em databases enormes, e nesses casos seria bom conhecer uma alternativa especializada para estes casos.
+Imagine que você recebeu uma lista de alunos de um colégio e é necessário ordenar essa lista por ordem de idade. Você, como um bom aluno de engenharia da computação, pensa direto nas aulas que teve com o ilustre **{green}(Marcelo Hashimoto)** e decide usar um dos algoritmos passados por ele. Isso é válido, visto que foram dadas múltiplas maneiras de enfrentar múltiplos problemas, porém, na vida real, você pode tratar com bases de dados com centenas de milhares de elementos em databases enormes, em quais realizar operações no disco é demorado, e nesses casos seria bom conhecer uma alternativa especializada para estes casos.
 
 * O que fazer?
 
-Um dos jeitos de lidar com esses casos é o algoritmo {red}(Bucket Sort). Este algoritmo pretende ordenar vetores quebrando-os em vetores menores e ordenando cada vetor menor individualmente. Para isso ser feito, é preciso percorrer **3 etapas** básicas de implementação: 
+Um dos jeitos de lidar com esses casos é o algoritmo {red}(Bucket Sort). Este algoritmo pretende ordenar vetores quebrando-os em vetores menores e ordenando cada vetor menor individualmente, similar ao **quick sort**, só que, ao invés de quebrar o vetor em "valores menores" e "valores maiores", o **Bucket sort** almeija separá-lo em vários pedacinhos, como "valores menores", "valores pequenos-médios", "valores médios", e assim em diante. Para isso ser feito, é preciso percorrer **3 etapas** básicas de implementação: 
 
 A *primeira etapa* consiste em separar esse vetor em vários "baldes", cada um deles comportando elementos em uma faixa de valores, por exemplo o intervalo de 1 a 20.
 
