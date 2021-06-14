@@ -215,8 +215,12 @@ Por exemplo:
 Caso k = n/8 
 
 A complexidade do algoritimo seria O(3n), ou seja de primeira ordem.
+:::
+3. O que acontece no caso n = k?
 
-É importante ressaltar que caso n = k, caímos no pior caso, visto que seria a mesma coisa que aplicar o insertion sort, O(n²)
+::: Gabarito
+
+Caso n = k, caímos no pior caso, visto que seria a mesma coisa que aplicar o insertion sort, O(n²)
 
 :::
 ???
