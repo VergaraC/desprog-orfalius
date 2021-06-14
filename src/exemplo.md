@@ -193,12 +193,22 @@ O(n)
 ??? Melhorar Caso 
 
 Qual a melhor complexidade para vetores muito grandes possível no *Bucket Sort*?
-::: Explicação do cálculo
-Levando em consideração a equação de complexidade do algoritimo:
+
+Para Calcular o melhor caso vamos separar em etapas:
+
+1. Vamos lembrar a equação de complexidade do *Bucket Sort*  
+
+::: Gabarito
 
 ![](AVG.png)
 
-Para a melhor complexidade possível é necessário que os buckets tenham o mesmo número de elementos e manter uma propornalidade entre k e n, sendo k o número de buckets e n o número de elementos no vetor.
+Sendo k o número de buckets e n o número de elementos no vetor.
+:::
+
+2. Agora, olhando a equação qual deve ser o número de buckets para o melhor caso? 
+
+::: Gabarito
+Para a melhor complexidade possível é necessário que os buckets tenham o mesmo número de elementos e manter uma propornalidade entre k e n.
 
 Por exemplo:
 
