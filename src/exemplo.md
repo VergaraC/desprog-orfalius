@@ -11,11 +11,11 @@ Introdução
 
 * Vetores
 
-Imagine que você recebeu uma lista de alunos de um colégio e é necessário ordenar essa lista por ordem de idade. Você, como um bom aluno de engenharia da computação, pensa direto nas aulas que teve com o ilustre **{green}(Marcelo Hashimoto)** e decide usar um dos algoritmos passados por ele. Isso é válido, visto que foram dadas múltiplas maneiras de enfrentar múltiplos problemas, porém, na vida real, você pode tratar com bases de dados com centenas de milhares de elementos em databases enormes, em quais realizar operações no disco é demorado, e nesses casos seria bom conhecer uma alternativa especializada para estes casos.
+Imagine que você recebeu uma lista de alunos de um colégio e é necessário ordenar essa lista por ordem de idade. Você, como um bom aluno de engenharia da computação, pensa direto nas aulas que teve com o ilustre **{green}(Marcelo Hashimoto)** e decide usar um dos algoritmos passados por ele. Isso é válido, visto que foram dadas múltiplas maneiras de enfrentar múltiplos problemas, porém, na vida real, você pode tratar com bases de dados com centenas de milhares de elementos em databases enormes, em quais realizar operações no disco é muito mais demorado que operações na memória, mas não é desejável gastar muita memória para realizar as operações, e nesses casos seria bom conhecer uma alternativa especializada para estes casos.
 
 * O que fazer?
 
-Um dos jeitos de lidar com esses casos é o algoritmo {red}(Bucket Sort). Este algoritmo pretende ordenar vetores quebrando-os em vetores menores e ordenando cada vetor menor individualmente, similar ao **quick sort**, só que, ao invés de quebrar o vetor em "valores menores" e "valores maiores", o **Bucket sort** almeija separá-lo em vários pedacinhos, como "valores menores", "valores pequenos-médios", "valores médios", e assim em diante. Para isso ser feito, é preciso percorrer **3 etapas** básicas de implementação: 
+Um dos jeitos de lidar com esses casos é o algoritmo {red}(Bucket Sort). Este algoritmo pretende ordenar vetores quebrando-os em vetores menores e ordenando cada vetor menor individualmente, similar ao **quick sort**, só que, ao invés de quebrar o vetor em "valores menores" e "valores maiores", o **Bucket sort** almeja separá-lo em vários pedacinhos, como "valores menores", "valores pequenos-médios", "valores médios", e assim em diante. Para isso ser feito, é preciso percorrer **3 etapas** básicas de implementação: 
 
 A *primeira etapa* consiste em separar esse vetor em vários "baldes", cada um deles comportando elementos em uma faixa de valores, por exemplo o intervalo de 1 a 20.
 
@@ -193,21 +193,48 @@ O(n)
 ??? Melhorar Caso 
 
 Qual a melhor complexidade para vetores muito grandes possível no *Bucket Sort*?
-::: Explicação do cálculo
-Levando em consideração a equação de complexidade do algoritimo:
+
+Para Calcular o melhor caso vamos separar em etapas:
+
+1. Vamos lembrar a equação de complexidade do *Bucket Sort*  
+
+::: Gabarito
 
 ![](AVG.png)
 
-Para a melhor complexidade possível é necessário que os buckets tenham o mesmo número de elementos e manter uma propornalidade entre k e n, sendo k o número de buckets e n o número de elementos no vetor.
+Sendo k o número de buckets e n o número de elementos no vetor.
+:::
+
+2. Para se obter a melhor eficiência possível do algoritimo como deve ser a distribuição dos elementos do vetor nos buckets? 
+
+::: Gabarito
+Para a melhor complexidade possível é necessário que os buckets tenham o mesmo número de elementos, ou seja sigam uma destribuição uniforme.
+:::
+
+3. Agora, olhando a equação qual deve ser o número de buckets para o melhor caso? 
+
+::: Gabarito
+Para a melhor complexidade possível é necessário que manter uma propornalidade entre k e n.
 
 Por exemplo:
 
 Caso k = n/8 
 
-A complexidade do algoritimo seria O(3n), ou seja de primeira ordem.
+:::
 
-É importante ressaltar que caso n = k, caímos no pior caso, visto que seria a mesma coisa que aplicar o insertion sort, O(n²)
+3. O que acontece no caso n = k?
 
+::: Gabarito
+
+Caso n = k, caímos no pior caso, visto que seria a mesma coisa que aplicar o insertion sort, O(n²)
+
+:::
+
+4. Assim, qual a complexidade do *Bucket sort* no melhor caso?
+::: Gabarito
+A complexidade do algoritimo seria O(3n), simplificando:
+
+O(n), ou seja de primeira ordem.
 :::
 ???
 -------------------------------
