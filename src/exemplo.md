@@ -190,7 +190,7 @@ A complexidade da etapa é O(k)
 O(n)
 :::
 ???
-??? Melhorar Caso 
+??? Melhor Caso 
 
 Qual a melhor complexidade possível para vetores muito grandes no *Bucket Sort*?
 
