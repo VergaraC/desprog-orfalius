@@ -205,23 +205,36 @@ Para Calcular o melhor caso vamos separar em etapas:
 Sendo k o número de buckets e n o número de elementos no vetor.
 :::
 
-2. Agora, olhando a equação qual deve ser o número de buckets para o melhor caso? 
+2. Para se obter a melhor eficiência possível do algoritimo como deve ser a distribuição dos elementos do vetor nos buckets? 
 
 ::: Gabarito
-Para a melhor complexidade possível é necessário que os buckets tenham o mesmo número de elementos e manter uma propornalidade entre k e n.
+Para a melhor complexidade possível é necessário que os buckets tenham o mesmo número de elementos, ou seja sigam uma destribuição uniforme.
+:::
+
+3. Agora, olhando a equação qual deve ser o número de buckets para o melhor caso? 
+
+::: Gabarito
+Para a melhor complexidade possível é necessário que manter uma propornalidade entre k e n.
 
 Por exemplo:
 
 Caso k = n/8 
 
-A complexidade do algoritimo seria O(3n), ou seja de primeira ordem.
 :::
+
 3. O que acontece no caso n = k?
 
 ::: Gabarito
 
 Caso n = k, caímos no pior caso, visto que seria a mesma coisa que aplicar o insertion sort, O(n²)
 
+:::
+
+4. Assim, qual a complexidade do *Bucket sort* no melhor caso?
+::: Gabarito
+A complexidade do algoritimo seria O(3n), simplificando:
+
+O(n), ou seja de primeira ordem.
 :::
 ???
 -------------------------------
