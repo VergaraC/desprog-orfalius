@@ -155,7 +155,20 @@ Qual a melhor complexidade possível para vetores muito grandes no *Bucket Sort*
 
 Para Calcular o melhor caso vamos separar em etapas:
 
-1. Para se obter a melhor eficiência possível do algoritmo como deve ser a distribuição dos elementos do vetor nos buckets? 
+1. Primeiro vamos calcular a complexidade da criação dos buckets e achar o valor máximo dos buckets:  
+::: Gabarito
+ Isso tem uma complexidade O(n), visto que é necessário percorrer cada item do elemento
+:::
+
+-------------------
+2. Depois vamos calcular a complexidade de separar os elementos nos buckets criados:
+
+::: Gabarito
+ Isso tem uma complexidade O(n), visto que é necessário percorrer cada item do elemento
+:::
+
+-------------------
+3. Para se obter a melhor eficiência possível do algoritmo como deve ser a distribuição dos elementos do vetor nos buckets? 
 
 ::: Gabarito
 Para a melhor complexidade possível é necessário que os buckets tenham o mesmo número de elementos, ou seja, sigam uma distribuição uniforme.
@@ -163,29 +176,38 @@ Para a melhor complexidade possível é necessário que os buckets tenham o mesm
 
 -------------------
 
-2. Com isso, qual a complexidade de ordenar os elementos dentro dos baldes via o *Insertion Sort*? 
+4. Com isso, qual a complexidade de ordenar os elementos dentro dos baldes via o *Insertion Sort*? 
 
 ::: Gabarito
-(n/k)^2
+Sendo a complexidade do *Insertion Sort* O(n^2), se o número de elementos de cada bucket é  n/k,
+a complexidade da ordenação de cada bucket é O((n/k)^2).
+
+Assim a complexidade para ordenar todos os buckets é O(k*((n/k)^2))
 :::
 
 -------------------
+5. Agora vamos calcular a complexidade da concatenação dos buckets no vetor final:
+::: Gabarito
+Sendo k = número de buckets
 
-3. Agora olhando as outras operações, qual a equação de complexidade do algoritmo?
+A complexidade da etapa é O(k)
+:::
+
+6. Agora olhando as outras operações, qual a equação de complexidade do algoritmo?
 ::: Gabarito
 
 ![](AVG.png)
 
 O primeiro termo vem da criação dos buckets e e achar os valores máximos e mínimos.
 
-O segundo termo foi descoberto no item anterior (ordenação de cada bucket).
+O segundo termo vem da ordenação de cada bucket.
 
 E o terceiro termo vem da concatenação dos buckets já organizados.
 :::
 
 -------------------
 
-4. Agora, olhando a equação qual deve ser o número de buckets para o melhor caso? 
+7. Agora, olhando a equação qual deve ser o número de buckets para o melhor caso? 
 
 ::: Gabarito
 Para a melhor complexidade possível é necessário que manter uma proporcionalidade entre k e n.
@@ -198,7 +220,7 @@ Caso k = n/8
 
 -------------------
 
-3. O que acontece no caso n = k?
+8. O que acontece no caso n = k?
 
 ::: Gabarito
 
@@ -208,9 +230,9 @@ Caso n = k, caímos no pior caso, visto que seria a mesma coisa que aplicar o in
 
 -------------------
 
-4. Assim, qual a complexidade do *Bucket sort* no melhor caso?
+9. Assim, qual a complexidade do *Bucket sort* no melhor caso?
 ::: Gabarito
-A complexidade do algoritmo seria O(3n), simplificando:
+A complexidade do algoritmo seria O(n + k), simplificando:
 
 O(n), ou seja de primeira ordem.
 :::
@@ -218,7 +240,7 @@ O(n), ou seja de primeira ordem.
 -------------------------------
 
 
-Desafio: a complexidade média
+Desafio: Para quem gosta de Ciência dos Dados
 -------------------------------
 
 ???Caso Médio
@@ -268,6 +290,8 @@ A complexidade da etapa é O(k)
 -------------------
 5. Assim a complexidade final do algoritmo no caso médio é: 
 ::: Gabarito
+
+A complexidade do algoritimo no caso médio é O(n + k), simplificando
 
 O(n)
 :::
